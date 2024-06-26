@@ -4,7 +4,7 @@ set -ex
 # Assign the first argument to yaml_file variable
 yaml_file=$1
 model="mistral"
-ollama_endpoint=http://10.13.13.9:11434/api/chat
+ollama_endpoint=http://0.0.0.0:11434/api/chat
 
 # Check if the YAML file path is provided
 if [ -z "$1" ]; then
@@ -20,7 +20,11 @@ fi
 
 # convert the declared chat history and implicitly disable streaming
 request_body=$(yq --input-format=yaml --output-format=json "{\"stream\": false } + ." "${yaml_file}")
+
+# Send the request to the Ollama API endpoint using curl
 response=$(curl -s -X POST -H "Content-Type: application/json" -d "${request_body}" "${ollama_endpoint}")
+
+# take the curl response and extract the message object by key using yq
 response_message=$(echo "${response}" | yq eval --input-format=json --output-format=json ".message")
 
 # Update the original declared file with the LLM response.
