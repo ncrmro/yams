@@ -1,0 +1,31 @@
+model: mistral
+messages:
+  - role: user
+    # TODO after running yams this context block will get reformated (in a not great way)
+    content: >-
+      Using the following context.
+
+      ```yaml  
+      type: recipe 
+      slug: "" 
+      title: "Unflavored Electrolyte Drink Base"
+      notes:
+        - use variety of sugars/glucose to promote uptake
+        - a variety of electrolytes and salts like magnesium 
+        - this should be easy to prepare in bulk and store
+      ingredients:
+        - name: ""
+          quantity: 0
+          unit: Tbsp
+          rational:
+          - ""
+      steps:
+
+        - Spread Peanut Butter on bread.
+      ```
+
+      Complete the document in the YAML code block.
+
+      ```yaml
+
+      ```
