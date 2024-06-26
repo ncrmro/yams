@@ -1,0 +1,31 @@
+#!/bin/bash
+set -ex
+
+# Assign the first argument to yaml_file variable
+yaml_file=$1
+model="mistral"
+ollama_endpoint=http://10.13.13.9:11434/api/chat
+
+# Check if the YAML file path is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <path_to_yaml_file>"
+  exit 1
+fi
+
+# Check if the file exists
+if [ ! -f "$yaml_file" ]; then
+  echo "File not found: $yaml_file"
+  exit 1
+fi
+
+# convert the declared chat history and implicitly disable streaming
+request_body=$(yq --input-format=yaml --output-format=json "{\"stream\": false } + ." "${yaml_file}")
+response=$(curl -s -X POST -H "Content-Type: application/json" -d "${request_body}" "${ollama_endpoint}")
+response_message=$(echo "${response}" | yq eval --input-format=json --output-format=json ".message")
+
+# Update the original declared file with the LLM response.
+yq eval --input-format=yaml --output-format=yaml --inplace ".messages += [ ${response_message} ]" "${yaml_file}"
+
+# TODO put this behind a flag
+# Open file after new message has been added.
+#open "${yaml_file}"

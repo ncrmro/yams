@@ -1,0 +1,25 @@
+model: mistral
+messages:
+  - role: user
+    # TODO after running yams this context block will get reformated (in a not great way)
+    content: >-
+      Using the following context.
+
+      ```yaml  
+      type: recipe 
+      slug: "" 
+      title: "Peanut butter and jelly" 
+      ingredients:
+        - name: Crunchy Peanut Butter
+          quantity: 2
+          unit: Tbsp
+      steps:
+
+        - Spread Peanut Butter on bread.
+      ```
+
+      Complete the document in the YAML code block.
+
+      ```yaml
+
+      ```

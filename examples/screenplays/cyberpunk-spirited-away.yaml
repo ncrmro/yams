@@ -1,0 +1,36 @@
+model: mistral
+messages:
+  - role: user
+    # TODO after running yams this context block will get reformated (in a not great way)
+    content: >-
+      Using the following context.
+
+      ```yaml  
+      screenplay:
+        title: "Spirited Away"
+        author: "Hayao Miyazaki"
+        scenes:
+          - scene_number: 1
+            location: "Abandoned amusement park"
+            time: "Day"
+            description: "Chihiro and her parents, lost and slightly confused, discover a seemingly abandoned amusement park."
+            actions:
+              - character: "Chihiro"
+                action: "Looks around curiously, her face mixed with fear and fascination."
+              - character: "Chihiro's Father"
+                action: "Leads the way, intrigued by the mysterious surroundings."
+              - character: "Chihiro's Mother"
+                action: "Follows, slightly apprehensive but curious."
+            dialogues:
+              - character: "Chihiro"
+                dialogue: "Dad, I think we're lost."
+        notes:
+          - "The scene is set in broad daylight, enhancing the eerie emptiness of the park."
+          - "Focus on Chihiro’s expressions to convey her inner turmoil and curiosity."
+      ```
+
+      Complete complete the scene if it where in a cyberpunk universe.
+
+      ```yaml
+
+      ```
