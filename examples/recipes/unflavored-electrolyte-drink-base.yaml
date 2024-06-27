@@ -10,7 +10,7 @@ messages:
       slug: "" 
       title: "Unflavored Electrolyte Drink Base"
       notes:
-        - use variety of sugars/glucose to promote uptake
+        - use variety of sugars to promote glucose uptake
         - a variety of electrolytes and salts like magnesium 
         - this should be easy to prepare in bulk and store
       ingredients:
@@ -28,4 +28,56 @@ messages:
 
       ```yaml
 
+      ```
+  - role: assistant
+    content: |2-
+       Here is a completed YAML code block for an Unflavored Electrolyte Drink Base recipe:
+
+      ```yaml
+      type: recipe
+      slug: "unflavored-electrolyte-drink-base"
+      title: "Unflavored Electrolyte Drink Base"
+      notes:
+        - Use a variety of sugars/glucose to promote uptake.
+        - A variety of electrolytes and salts like magnesium for optimal hydration and recovery.
+        - This should be easy to prepare in bulk and store for future use.
+      ingredients:
+        - name: Granulated sugar
+          quantity: 1/2 cup (100g)
+          unit:
+          rational: Provides quick energy for hydration and recovery
+        - name: Dextrose powder
+          quantity: 1/2 cup (100g)
+          unit:
+          rational: Provides quick energy for hydration and recovery
+        - name: Maltodextrin
+          quantity: 1 cup (200g)
+          unit:
+          rational: Provides sustained energy for long periods of exercise
+        - name: Sodium citrate
+          quantity: 1/4 cup (57g)
+          unit:
+          rational: Helps maintain proper electrolyte balance and prevents cramping
+        - name: Potassium chloride
+          quantity: 2 Tbsp (30g)
+          unit:
+          rational: Essential for muscle function and maintaining proper electrolyte balance
+        - name: Magnesium citrate
+          quantity: 1/4 cup (57g)
+          unit:
+          rational: Promotes muscle relaxation, prevents cramping, and aids in nutrient absorption
+        - name: Calcium lactate
+          quantity: 1/2 cup (100g)
+          unit:
+          rational: Supports bone health and aids in nutrient absorption
+        - name: Sodium bicarbonate
+          quantity: 2 Tbsp (30g)
+          unit:
+          rational: Helps buffer acidity in the body, reducing muscle fatigue during exercise
+      steps:
+        - Combine granulated sugar, dextrose powder, and maltodextrin in a large container.
+        - Add sodium citrate, potassium chloride, magnesium citrate, calcium lactate, and sodium bicarbonate to the mixture.
+        - Stir well to ensure even distribution of all ingredients.
+        - Store in an airtight container for up to 6 months.
+        - To use, mix 1-2 tablespoons of the electrolyte drink base with water according to your hydration needs during exercise or recovery.
       ```
