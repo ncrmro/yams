@@ -39,7 +39,10 @@ messages:
 
   - role: user
     content: >-
-      Could you in a few code snippets provide the following. - A project README.md in a markdown codeblock. - A main.py containing a single function used to check if the provided string is a even or odd (and can be parsed into an integer, eg this should typeguard both numbers and that they are 0 or 1) - A test.py containing three tests, one for each possible number and then an error response for anything else.
+      Could you in a few code snippets provide the following. 
+      - A project README.md in a markdown codeblock. 
+      - A main.py containing a single function used to check if the provided string is a even or odd (and can be parsed into an integer, eg this should typeguard both numbers and that they are 0 or 1) 
+      - A test.py containing three tests, one for each possible number and then an error response for anything else.
 
   - role: assistant
     content: |2-
