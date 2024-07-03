@@ -1,0 +1,118 @@
+model: mistral
+messages:
+  - role: user
+    content: "Are you there?"
+
+  - role: assistant
+    content: |2-
+       Yes, I'm here! How can I help you today?
+
+      Here are some things I can do:
+
+      1. Answer questions: I can answer any question you have to the best of my ability. Just let me know what you want to know and I'll give you an accurate and detailed response.
+      2. Provide definitions: If you need a definition for a word or concept, just ask and I'll provide you with a clear and concise explanation.
+      3. Give explanations: If you have a complex topic that you don't quite understand, just explain it to me and I'll do my best to give you an easy-to-understand explanation.
+      4. Write essays or articles: If you need help writing an essay or article on a particular topic, just provide me with some basic information and I'll write a well-researched and engaging piece for you.
+      5. Edit and proofread: If you have already written something and need it edited and proofread, just send it over and I'll make sure it is free of errors and flows smoothly.
+      6. Translate text: If you need text translated from one language to another, just provide the source text and the target language and I'll take care of the rest.
+      7. Generate ideas: If you are struggling to come up with ideas for a project or assignment, just tell me what you are working on and I'll generate some creative and innovative ideas for you.
+      8. Brainstorm solutions: If you have a problem that you can't seem to solve, just explain it to me and we'll brainstorm some potential solutions together.
+      9. Offer advice: If you need advice on a personal or professional matter, just let me know what's on your mind and I'll offer you my best guidance based on my knowledge and experience.
+      10. Provide recommendations: If you are looking for recommendations on books, movies, TV shows, restaurants, or other things, just tell me what you like and I'll give you some great suggestions based on your preferences.
+
+      Please let me know how I can help you today!
+
+  - role: user
+    content: "Whats the first program most programmers write when they are learning?"
+
+  - role: assistant
+    content: |2-
+       The first program that many beginning programmers write is often a simple "Hello World" program. This program simply prints out the message "Hello World" when run. Here's an example in Python:
+
+      ```python
+      print("Hello World")
+      ```
+
+      The reason why this is often the first program that beginners write is because it is very easy to understand and requires only a single line of code. It helps new programmers get familiar with the basics of their chosen programming language, such as how to write and run a program, how to use print statements, and how to define and call functions (in some languages).
+
+      Once they have written and successfully run a "Hello World" program, beginners can then move on to more complex projects that involve input/output, variables, control structures, loops, conditionals, and other programming concepts.
+
+  - role: user
+    content: >-
+      Could you in a few code snippets provide the following. - A project README.md in a markdown codeblock. - A main.py containing a single function used to check if the provided string is a even or odd (and can be parsed into an integer, eg this should typeguard both numbers and that they are 0 or 1) - A test.py containing three tests, one for each possible number and then an error response for anything else.
+
+  - role: assistant
+    content: |2-
+       Certainly! Here's an example of a simple Python project with the requested components:
+
+      First, let's create a `README.md` file in markdown format that explains what our program does:
+
+      ```markdown
+      # Even or Odd Number Checker
+
+      This is a simple Python program to check if a given number is even or odd.
+
+      ## Installation
+
+      There is no installation required for this program as it is a standalone script written in Python 3.
+
+      ## Usage
+
+      Save the following three files with the names `README.md`, `main.py`, and `test.py` in the same directory. Then, run the tests by executing `test.py`. The program will pass if all tests pass and fail otherwise.
+
+      ## main.py
+
+      The following is the implementation of the main logic for checking even or odd numbers.
+
+      ```python
+      def is_even(num):
+          """Checks if a number is even."""
+          return num % 2 == 0
+
+      def is_odd(num):
+          """Checks if a number is odd."""
+          return not is_even(num)
+
+      def main():
+          num = int(input("Enter a number: "))
+          if isinstance(num, int):
+              if is_even(num):
+                  print(f"{num} is an even number.")
+              else:
+                  print(f"{num} is an odd number.")
+          else:
+              print("Invalid input. Please enter a valid integer.")
+
+      if __name__ == "__main__":
+          main()
+      ```
+
+      ## test.py
+
+      The following are the unit tests for checking if the `is_even` and `is_odd` functions work as expected.
+
+      ```python
+      import unittest
+      from main import is_even, is_odd
+
+      class TestEvenOdd(unittest.TestCase):
+          def test_zero(self):
+              self.assertTrue(is_even(0))
+
+          def test_one(self):
+              self.assertFalse(is_even(1))
+              self.assertTrue(is_odd(1))
+
+          def test_negative_number(self):
+              self.assertEqual(-5, is_even(-5) * 2 + 1)
+              self.assertTrue(is_odd(-5))
+
+          def test_non_integer(self):
+              with self.assertRaises(TypeError):
+                  is_even("hello")
+
+      if __name__ == "__main__":
+          unittest.main()
+      ```
+
+      This project should give you a good starting point for understanding how to write simple Python programs and perform unit testing using the `unittest` module.
