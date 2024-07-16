@@ -73,7 +73,7 @@ messages:
 
 - [bin/yams](bin/yams)
   - Copy and customize this in your repos!
-  - Use TODOs and an LLM to make quick modifictions
+  - Use TODOs and an LLM to make quick modifictions to `bin/yams` if required (or re-implment and link to that here)
 - [examples/recipes/peanut-butter-and-jelly.yaml](examples/recipes/peanut-butter-and-jelly.yaml)
   - committed after running the `bin/yams` script.
 - New Prompt skeleton prompts are easy to generate by asking an LLM
