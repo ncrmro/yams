@@ -2,15 +2,24 @@
 
 YAMs are chat histories with LLMs declared as YAML, containing markdown strings used primarily to communicate with an Ollama API and aid in ideation or in agentic workflows.
 
-A YAM looks like this
+**Advantages**:
 
+- Extremely low-code with high developer ergonomics and inspectability.
+- Provide an example workflow for developing LLM prompts involving structured data input and outputs.
+- commiting and collaborating of chat's to VCS allows for rapid ideation
+
+**Example YAM**
+
+Generally a VCS Git repo might hav a `docs` or `documentation` folder, we can then create `docs/yams/000-template.yaml` and use that to jumpstart any new YAMs before commiting them. 
+This allows YAMs to be further refined with peers in pull reqiests.
+
+Here we might have a folder of `recipies` and the following YAM might be `recipies/001-penut-butter-and-jelly.yaml`
 
 ````yaml
 # YAMs context doc
 # - everything in this file gets converted to JSON and sent to an Ollama LLM endpoint
 # - single prompt with a context block provided as a markdown yaml codeblock
 # - returns either the context block back a yaml, markdown or plain text
-# - commiting and collaborating of chat's allows for rapid ideation
 
 model: mistral
 messages:
@@ -60,9 +69,11 @@ messages:
 ````
 
 
-The two files to look at in this repo are
+**Whats in this Repo?**
 
 - [bin/yams](bin/yams)
+  - Copy and customize this in your repos!
+  - Use TODOs and an LLM to make quick modifictions
 - [examples/recipes/peanut-butter-and-jelly.yaml](examples/recipes/peanut-butter-and-jelly.yaml)
   - committed after running the `bin/yams` script.
 - New Prompt skeleton prompts are easy to generate by asking an LLM
@@ -71,12 +82,8 @@ The two files to look at in this repo are
     - [recipe](https://chatgpt.com/share/76eead06-8b3d-425e-96bd-e35a9938faf6)
     - [business plan](https://chatgpt.com/share/0f698383-0146-4862-9816-b6e12f1f1fe9)
 
-**Advantages**:
-
-- Extremely low-code with high developer ergonomics and inspectability.
-- Provide an example workflow for developing LLM prompts involving structured data input and outputs.
-
 **Process**:
+
 
 - The chat history request body is specified as a YAML file.
   - Model is set as a top-level key in the YAMs with parameters from the [Ollama API](https://github.com/ollama/ollama/blob/main/docs/api.md).
