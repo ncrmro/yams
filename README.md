@@ -7,6 +7,7 @@ A YAM looks like this
 
 ````yaml
 # YAMs context doc
+# - everything in this file gets converted to JSON and sent to an Ollama LLM endpoint
 # - single prompt with a context block provided as a markdown yaml codeblock
 # - returns either the context block back a yaml, markdown or plain text
 # - commiting and collaborating of chat's allows for rapid ideation
