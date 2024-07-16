@@ -6,6 +6,11 @@ A YAM looks like this
 
 
 ````yaml
+# YAMs context doc
+# - single prompt with a context block provided as a markdown yaml codeblock
+# - returns either the context block back a yaml, markdown or plain text
+# - commiting and collaborating of chat's allows for rapid ideation
+
 model: mistral
 messages:
   - role: user
@@ -29,37 +34,10 @@ messages:
       ```yaml
 
       ```
-````
 
+  # After we run bin/yams ./pbj.yaml
+  # The following object will be added from the LLM's response
 
-<details>
-
-<summary>View Completed YAM</summary>
-
-````yaml
-model: mistral
-messages:
-  - role: user
-    content: >-
-      Using the following context:
-
-      ```yaml 
-      type: recipe
-      slug: ""
-      title: "Peanut butter and jelly"
-      ingredients:
-        - name: Crunchy Peanut Butter
-          quantity: 2
-          unit: Tbsp
-      steps:
-        - Spread Peanut Butter on bread.
-      ```
-
-      Complete the document in the YAML code block.
-
-      ```yaml
-
-      ```
   - role: assistant
     content: |2-
        ```yaml
@@ -79,8 +57,6 @@ messages:
         - Place the two slices together with their respective layers facing each other.
       ```
 ````
-
-</details>
 
 
 The two files to look at in this repo are
