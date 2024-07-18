@@ -1,0 +1,33 @@
+# YAMs context doc
+# - single prompt with a context block provided as a markdown yaml codeblock
+# - returns either the context block back a yaml, markdown or plain text
+
+model: mistral
+messages:
+  - role: user
+    # Take note any comments inside of the prompt will influence the results, for example the following TODO
+    # TODO after running yams this context block will get reformated (in a not great way)
+    
+    content: >-
+      Using the following context.
+
+      ```yaml
+
+      title: "Acme Corporation"
+      type: business
+      goals:
+        short_term:
+          - Develop more effective traps for Road Runner
+          - Increase durability of products used by Wile E. Coyote
+          - Conduct product tests to ensure higher success rates
+        long_term:
+          - Innovate new technologies to capture Road Runner
+          - Achieve a 100% capture rate for Wile E. Coyote
+          - Enhance brand reputation for reliability in the predator market
+      ```
+
+      Return a business plan formated as yaml.
+
+      ```yaml
+      
+      ```
