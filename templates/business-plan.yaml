@@ -26,7 +26,7 @@ messages:
           - Enhance brand reputation for reliability in the predator market
       ```
 
-      Return a business plan formated as yaml.
+      Return a business plan formated as yaml in the follownig codeblock..
 
       ```yaml
       
