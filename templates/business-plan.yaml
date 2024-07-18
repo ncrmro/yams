@@ -2,6 +2,9 @@
 # - single prompt with a context block provided as a markdown yaml codeblock
 # - returns either the context block back a yaml, markdown or plain text
 
+# The goals here for the ACME corporation where generated in the following ChatGPT link.
+# https://chatgpt.com/share/4825bb33-595d-463e-bd38-3eac8861a16f
+
 model: mistral
 messages:
   - role: user
