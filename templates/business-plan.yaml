@@ -2,7 +2,7 @@
 # - single prompt with a context block provided as a markdown yaml codeblock
 # - returns either the context block back a yaml, markdown or plain text
 
-# The goals here for the ACME corporation where generated in the following ChatGPT link.
+# The goals here for the ACME corporation where generated in the following ChatGPT link with slight modifications
 # https://chatgpt.com/share/4825bb33-595d-463e-bd38-3eac8861a16f
 
 model: mistral
@@ -26,7 +26,7 @@ messages:
         long_term:
           - Innovate new technologies to capture Road Runner
           - Achieve a 100% capture rate for Wile E. Coyote
-          - Enhance brand reputation for reliability in the predator market
+          - Enhance brand reputation for reliability in the Road Runner catching market
       ```
 
       Return a business plan formated as yaml in the follownig codeblock..
